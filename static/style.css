@@ -1,0 +1,39 @@
+.mainheader{
+    background-color:#eb0f0f;
+    color: white;
+    padding:50px;
+    text-align: center;
+    font-family: 'Alfa Slab One', cursive;
+}
+
+.sectionmain{
+    margin-top: 10px;
+    margin-left: 40px;
+    float: left;
+    width: 60%;
+    padding: 10px;
+    border-right: 2px dotted black;
+}
+
+.asidemain{
+    border: 1px;
+    margin-top: 10px;
+    margin-right:20px;
+    margin-left: 990px;
+    width: 35%;
+    padding: 10px;
+}
+
+.headingmain{
+    padding-top:40px;
+    padding-left:40px;
+    color: #eb0f0f;
+    font-family: "Poppins", sans-serif;
+    text-transform: uppercase;
+    font-size: 60px;
+    letter-spacing: 2px;
+}
+
+.pmain{
+    text-align: justify;
+}

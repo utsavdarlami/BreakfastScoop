@@ -124,5 +124,5 @@ if __name__=='__main__':
     t = Thread(target=run_schedule)
     t.start()
 
-    app.run(host="0.0.0.0",port=4000,debug=True,use_reloader=False)
+    app.run(port=4000,debug=True,use_reloader=False)
      

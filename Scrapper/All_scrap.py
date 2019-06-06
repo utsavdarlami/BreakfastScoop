@@ -62,6 +62,7 @@ def NewScrap(urls,dbName):
                 description =  post.find('description').text
                 soup_description =BeautifulSoup(post.find('description').text,'html.parser')
                 # cleaned
+                aDic['scrapdate']=datetime.now().time()
                 aDic['Publisher']=url
                 aDic['Title']=title
                 aDic['Publish_Date'] = date_parser.parse(pubdate)

@@ -16,7 +16,7 @@ from threading import Thread
 
 
 # our news Scrapper 
-from Scrapper.All_scrap import AW_scrap,nep_scrap
+from Scrapper.All_scrap import AW_scrap,nep_scrap,sports_scrap
 # from nep_scrap import NewsScrapper 
 
 #others
@@ -117,6 +117,7 @@ if __name__=='__main__':
 
     schedule.every(6).hours.do(nep_scrap)
     schedule.every(6).hours.do(AW_scrap)
+    schedule.every(6).minutes.do(sports_scrap)
 
     # schedule.every(2).minutes.do(nep_scrap)
     # schedule.every(2).minutes.do(AW_scrap)

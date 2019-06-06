@@ -62,6 +62,7 @@ def NewScrap(urls,dbName):
                 description =  post.find('description').text
                 soup_description =BeautifulSoup(post.find('description').text,'html.parser')
                 # cleaned
+                aDic['scrapdate']=datetime.now().time()
                 aDic['Publisher']=url
                 aDic['Title']=title
                 aDic['Publish_Date'] = date_parser.parse(pubdate)
@@ -80,8 +81,12 @@ def AW_scrap():
     dbName="newNews"
     urls={
         "Wired":"https://www.wired.com/feed/rss",
-        "Aljazeera":"https://www.aljazeera.com/xml/rss/all.xml"
-    }
+        "Aljazeera":"https://www.aljazeera.com/xml/rss/all.xml",
+     "TheGuardian":"https://www.theguardian.com/world/rss",
+     "NY Times":"https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/section/world/rss.xml",
+     "Times Of India":"https://timesofindia.indiatimes.com/rssfeeds/296589292.cms",
+     "RT News":"https://www.rt.com/rss/news/"    }
+     
     NewScrap(urls,dbName)
     print("AW-scrapped")
 
@@ -96,6 +101,17 @@ def nep_scrap():
     NewScrap(urls,dbName)
     print("NEP-scrapped")
 
-
+def sports_scrap():
+    #for sports news
+    dbName="sportsNews"
+    urls={
+        "espn":"https://www.espn.com/espn/rss/news",
+        "skysports":"https://www.skysports.com/rss/12040",
+        "sportskeeda":"https://www.sportskeeda.com/feed",
+        "cbs_soccer":"https://www.cbssports.com/rss/headlines/soccer/",
+        "cbs_tennis":"https://www.cbssports.com/rss/headlines/tennis/"
+    }
+    NewScrap(urls,dbName)
+    print("SPORTS-scrapped")
 
 # More need for Sports, Technology

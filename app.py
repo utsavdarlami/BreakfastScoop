@@ -16,7 +16,8 @@ from threading import Thread
 
 
 # our news Scrapper 
-from nep_scrap import NewsScrapper 
+from Scrapper.All_scrap import AW_scrap,nep_scrap
+# from nep_scrap import NewsScrapper 
 
 #others
 import json
@@ -91,13 +92,14 @@ def page_not_found(error):
 
 """
 
-def job():
-    print("Scrapped")
-    NewsScrapper()
-    """
-        print("Running periodic task!")
-        print("Elapsed time: " + str(time.time() - start_time))
-    """
+# def job():
+#     print("Nep -Scrapped")
+#     # NewsScrapper()
+#     nep_scrap()
+#     """
+#         print("Running periodic task!")
+#         print("Elapsed time: " + str(time.time() - start_time))
+#     """
 
 def run_schedule():
     while 1:
@@ -111,7 +113,9 @@ def run_schedule():
     
 if __name__=='__main__':
     # schedule.every(2).minutes.do(job)
-    schedule.every(6).hours.do(job)
+    schedule.every(6).hours.do(nep_scrap)
+    schedule.every(6).hours.do(AW_scrap)
+
 
     t = Thread(target=run_schedule)
     t.start()

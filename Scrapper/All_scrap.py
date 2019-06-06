@@ -28,11 +28,15 @@ def clean_description(description):
     return c_description
  
 def NewScrap(urls,dbName):
-     myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+    myclient = pymongo.MongoClient("mongodb://localhost:27017/")
 
     breakfastDB = myclient["breakfast"]
     breakfastDB[dbName].drop()
     newsCollection = breakfastDB[dbName]
+
+    user_agent = UserAgent()
+
+    header ={"user-agent":user_agent.random}
 
 
     for url in urls:

@@ -113,9 +113,13 @@ def run_schedule():
     
 if __name__=='__main__':
     # schedule.every(2).minutes.do(job)
+    # schedule.every(6).hours.do(job)
+
     schedule.every(6).hours.do(nep_scrap)
     schedule.every(6).hours.do(AW_scrap)
 
+    # schedule.every(2).minutes.do(nep_scrap)
+    # schedule.every(2).minutes.do(AW_scrap)
 
     t = Thread(target=run_schedule)
     t.start()

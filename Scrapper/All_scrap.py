@@ -80,9 +80,9 @@ def AW_scrap():
     dbName="newNews"
     urls={
         "Wired":"https://www.wired.com/feed/rss",
-        "Aljazeera":"https://www.aljazeera.com/xml/rss/all.xml"
-      "TheGuardian": "https://www.theguardian.com/world/rss"
-    }
+        "Aljazeera":"https://www.aljazeera.com/xml/rss/all.xml",
+     "TheGuardian":"https://www.theguardian.com/world/rss"    }
+     
     NewScrap(urls,dbName)
     print("AW-scrapped")
 

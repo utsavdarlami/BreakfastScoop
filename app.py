@@ -16,8 +16,9 @@ from threading import Thread
 
 
 # our news Scrapper 
-from Scrapper.All_scrap import business_scrap,AW_scrap,nep_scrap,sports_scrap,technology_scrap
+# from Scrapper.All_scrap import business_scrap,AW_scrap,nep_scrap,sports_scrap,technology_scrap
 # from nep_scrap import NewsScrapper 
+from totalscrap import TotalNewsScrap
 
 #others
 import json
@@ -42,23 +43,56 @@ def home():
 #category urls
 @app.route("/sports/")
 def sports():
-    news_list = mongo.db.sportsNews.find().sort("Publish_Date")
+    news_list = mongo.db.totalNews.find({"Category": "SPORTS"})
     #news_list = mongo.db.allNews.find()
 
     return render_template('db.html',news_list =news_list)
 
 @app.route("/technology/")
 def technology():
-    news_list = mongo.db.techologyNews.find().sort("Publish_Date")
+    news_list = mongo.db.totalNews.find({"Category": "TECH"})
     #news_list = mongo.db.allNews.find()
 
     return render_template('db.html',news_list =news_list)
 
 @app.route("/business/")
 def business():
-    news_list = mongo.db.businessNews.find().sort("Publish_Date")
+    news_list = mongo.db.totalNews.find({"Category": "BUSINESS"})
     #news_list = mongo.db.allNews.find()
     return render_template('db.html',news_list =news_list)
+
+@app.route("/worldnews/")
+def worldnews():
+    news_list = mongo.db.totalNews.find({"Category": "WORLDNEWS"})
+    #news_list = mongo.db.allNews.find()
+    return render_template('db.html',news_list =news_list)
+
+@app.route("/entertainment/")
+def entertainment():
+    news_list = mongo.db.totalNews.find({"Category": "ENTERTAINMENT"})
+    #news_list = mongo.db.allNews.find()
+    return render_template('db.html',news_list =news_list)
+@app.route("/politics/")
+def politics():
+    news_list = mongo.db.totalNews.find({"Category": "POLITICS"})
+    #news_list = mongo.db.allNews.find()
+
+    return render_template('db.html',news_list =news_list)
+
+@app.route("/science/")
+def science():
+    news_list = mongo.db.totalNews.find({"Category": "SCIENCE"})
+    #news_list = mongo.db.allNews.find()
+
+    return render_template('db.html',news_list =news_list)
+
+
+@app.route("/arts_culture/")
+def arts_culture():
+    news_list = mongo.db.totalNews.find({"Category": "ARTS_CULTURE"})
+    #news_list = mongo.db.allNews.find()
+    return render_template('db.html',news_list =news_list)
+
 
 #---end---
 @app.route("/api/")
@@ -92,10 +126,18 @@ def test3():
 
 @app.route("/api3/")
 def test3():
-    international_news =mongo.db.newNews.find().sort("Publish_Date")
+    international_news = mongo.db.filteredNews.find({"Category_Class": "WORLDNEWS"})
+
     return render_template('db.html',news_list =international_news)
+"""-------------------------"""
+@app.route("/pre/")
+def predict():
+    news_list = mongo.db.filteredNews.find({"Category_Class": "ENTERTAINMENT"})
+    #news_list = mongo.db.allNews.find()
 
+    return render_template('db.html',news_list =news_list)
 
+"""---------s"""
 @app.route("/about/")
 def about():
     return "About!"
@@ -138,11 +180,11 @@ if __name__=='__main__':
 
     #hours
 
-    schedule.every(6).hours.do(nep_scrap)
-    schedule.every(6).hours.do(AW_scrap)
-    schedule.every(6).hours.do(technology_scrap)
-    schedule.every(6).hours.do(sports_scrap)
-    schedule.every(6).hours.do(business_scrap)
+    schedule.every(6).hours.do(TotalNewsScrap)
+    # schedule.every(6).hours.do(AW_scrap)
+    # schedule.every(6).hours.do(technology_scrap)
+    # schedule.every(6).hours.do(sports_scrap)
+    # schedule.every(6).hours.do(business_scrap)
 
     #minutes
     # schedule.every(10).minutes.do(nep_scrap)

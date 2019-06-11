@@ -37,8 +37,8 @@ def NewsScrapper():
     myclient = pymongo.MongoClient("mongodb://localhost:27017/")
 
     breakfastDB = myclient["breakfast"]
-    breakfastDB["allNews"].drop()
-    newsCollection = breakfastDB["allNews"]
+    breakfastDB["AWnews"].drop()
+    newsCollection = breakfastDB["AWnews"]
 
 
     # scrap
@@ -49,11 +49,12 @@ def NewsScrapper():
     header ={"user-agent":user_agent.random}
 
 
-    urls = {
-        "onlinekhabar":"http://english.onlinekhabar.com/feed",
-        "the himalayan times":"https://thehimalayantimes.com/feed/",
-        "setopati":"https://setopati.net/feed"
-        }
+    urls={
+        "Wired":"https://www.wired.com/feed/rss",
+        "Aljazeera":"https://www.aljazeera.com/xml/rss/all.xml",
+        "TheGuardian":"https://www.theguardian.com/world/rss",
+        "NY Times":"https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/section/world/rss.xml",
+    }
 
 
     for url in urls:

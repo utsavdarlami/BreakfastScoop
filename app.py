@@ -16,7 +16,8 @@ from threading import Thread
 
 
 # our news Scrapper 
-from nep_scrap import NewsScrapper 
+from Scrapper.All_scrap import business_scrap,AW_scrap,nep_scrap,sports_scrap,technology_scrap
+# from nep_scrap import NewsScrapper 
 
 #others
 import json
@@ -38,7 +39,28 @@ mongo = PyMongo(app)
 @app.route("/")
 def home():
     return render_template('home.html')
+#category urls
+@app.route("/sports/")
+def sports():
+    news_list = mongo.db.sportsNews.find().sort("Publish_Date")
+    #news_list = mongo.db.allNews.find()
 
+    return render_template('db.html',news_list =news_list)
+
+@app.route("/technology/")
+def technology():
+    news_list = mongo.db.techologyNews.find().sort("Publish_Date")
+    #news_list = mongo.db.allNews.find()
+
+    return render_template('db.html',news_list =news_list)
+
+@app.route("/business/")
+def business():
+    news_list = mongo.db.businessNews.find().sort("Publish_Date")
+    #news_list = mongo.db.allNews.find()
+    return render_template('db.html',news_list =news_list)
+
+#---end---
 @app.route("/api/")
 def test1():
     # static/data/test_data.json
@@ -91,13 +113,14 @@ def page_not_found(error):
 
 """
 
-def job():
-    print("Scrapped")
-    NewsScrapper()
-    """
-        print("Running periodic task!")
-        print("Elapsed time: " + str(time.time() - start_time))
-    """
+# def job():
+#     print("Nep -Scrapped")
+#     # NewsScrapper()
+#     nep_scrap()
+#     """
+#         print("Running periodic task!")
+#         print("Elapsed time: " + str(time.time() - start_time))
+#     """
 
 def run_schedule():
     while 1:
@@ -111,10 +134,27 @@ def run_schedule():
     
 if __name__=='__main__':
     # schedule.every(2).minutes.do(job)
-    schedule.every(6).hours.do(job)
+    # schedule.every(6).hours.do(job)
+
+    #hours
+
+    schedule.every(6).hours.do(nep_scrap)
+    schedule.every(6).hours.do(AW_scrap)
+    schedule.every(6).hours.do(technology_scrap)
+    schedule.every(6).hours.do(sports_scrap)
+    schedule.every(6).hours.do(business_scrap)
+
+    #minutes
+    # schedule.every(10).minutes.do(nep_scrap)
+    # schedule.every(10).minutes.do(AW_scrap)
+    # schedule.every(10).minutes.do(technology_scrap)
+    # schedule.every(10).minutes.do(sports_scrap)
+    # schedule.every(10).minutes.do(business_scrap)
+
+
 
     t = Thread(target=run_schedule)
     t.start()
 
-    app.run(host="0.0.0.0",port=4000,debug=True,use_reloader=False)
+    app.run(port=4000,debug=True,use_reloader=False)
      

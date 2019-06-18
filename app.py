@@ -116,8 +116,8 @@ if __name__=='__main__':
     # schedule.every(6).hours.do(job)
 
     schedule.every(6).hours.do(nep_scrap)
-    schedule.every(5).minutes.do(AW_scrap)
-    schedule.every(6).minutes.do(sports_scrap)
+    schedule.every(10).minutes.do(AW_scrap)
+    schedule.every(10).minutes.do(sports_scrap)
 
     # schedule.every(2).minutes.do(nep_scrap)
     # schedule.every(2).minutes.do(AW_scrap)

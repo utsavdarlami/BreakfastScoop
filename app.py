@@ -16,7 +16,7 @@ from threading import Thread
 
 
 # our news Scrapper 
-from Scrapper.All_scrap import AW_scrap,nep_scrap,sports_scrap
+from Scrapper.All_scrap import business_scrap,AW_scrap,nep_scrap,sports_scrap,technology_scrap
 # from nep_scrap import NewsScrapper 
 
 #others
@@ -39,7 +39,28 @@ mongo = PyMongo(app)
 @app.route("/")
 def home():
     return render_template('home.html')
+#category urls
+@app.route("/sports/")
+def sports():
+    news_list = mongo.db.sportsNews.find().sort("Publish_Date")
+    #news_list = mongo.db.allNews.find()
 
+    return render_template('db.html',news_list =news_list)
+
+@app.route("/technology/")
+def technology():
+    news_list = mongo.db.techologyNews.find().sort("Publish_Date")
+    #news_list = mongo.db.allNews.find()
+
+    return render_template('db.html',news_list =news_list)
+
+@app.route("/business/")
+def business():
+    news_list = mongo.db.businessNews.find().sort("Publish_Date")
+    #news_list = mongo.db.allNews.find()
+    return render_template('db.html',news_list =news_list)
+
+#---end---
 @app.route("/api/")
 def test1():
     # static/data/test_data.json
@@ -115,12 +136,22 @@ if __name__=='__main__':
     # schedule.every(2).minutes.do(job)
     # schedule.every(6).hours.do(job)
 
+    #hours
+
     schedule.every(6).hours.do(nep_scrap)
     schedule.every(6).hours.do(AW_scrap)
-    schedule.every(6).minutes.do(sports_scrap)
+    schedule.every(6).hours.do(technology_scrap)
+    schedule.every(6).hours.do(sports_scrap)
+    schedule.every(6).hours.do(business_scrap)
 
-    # schedule.every(2).minutes.do(nep_scrap)
-    # schedule.every(2).minutes.do(AW_scrap)
+    #minutes
+    # schedule.every(10).minutes.do(nep_scrap)
+    # schedule.every(10).minutes.do(AW_scrap)
+    # schedule.every(10).minutes.do(technology_scrap)
+    # schedule.every(10).minutes.do(sports_scrap)
+    # schedule.every(10).minutes.do(business_scrap)
+
+
 
     t = Thread(target=run_schedule)
     t.start()

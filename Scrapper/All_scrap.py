@@ -62,7 +62,7 @@ def NewScrap(urls,dbName):
                 description =  post.find('description').text
                 soup_description =BeautifulSoup(post.find('description').text,'html.parser')
                 # cleaned
-                aDic['scrapdate']=datetime.now().time()
+                aDic['scrapTime']= datetime.now().strftime('%Y-%m-%d %H:%M:%S')
                 aDic['Publisher']=url
                 aDic['Title']=title
                 aDic['Publish_Date'] = date_parser.parse(pubdate)
@@ -82,10 +82,11 @@ def AW_scrap():
     urls={
         "Wired":"https://www.wired.com/feed/rss",
         "Aljazeera":"https://www.aljazeera.com/xml/rss/all.xml",
-     "TheGuardian":"https://www.theguardian.com/world/rss",
-     "NY Times":"https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/section/world/rss.xml",
-     "Times Of India":"https://timesofindia.indiatimes.com/rssfeeds/296589292.cms",
-     "RT News":"https://www.rt.com/rss/news/"    }
+        "TheGuardian":"https://www.theguardian.com/world/rss",
+        "NY Times":"https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/section/world/rss.xml",
+        "Times Of India":"https://timesofindia.indiatimes.com/rssfeeds/296589292.cms",
+        "RT News":"https://www.rt.com/rss/news/" 
+    }
      
     NewScrap(urls,dbName)
     print("AW-scrapped")
@@ -115,3 +116,29 @@ def sports_scrap():
     print("SPORTS-scrapped")
 
 # More need for Sports, Technology
+def technology_scrap():
+    dbName="technologyNews"
+    urls={
+        "Wall Street JOurnal":"https://feeds.a.dj.com/rss/RSSWSJD.xml",
+        "MIT Technology review":"https://www.technologyreview.com/topnews.rss", 
+        "CNET":"https://www.cnet.com/rss/news/",
+        "Tech meme":"https://www.techmeme.com/feed.xml",
+        # "BBC Tech":"http://feeds.bbci.co.uk/news/technology/rss.xml"
+        "NY Times":"https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml"
+    }
+    NewScrap(urls,dbName)
+    print("TECHNOLOGY-scrapped")
+
+
+def business_scrap():
+    dbName="businessNews"
+    urls={
+        # "CNN Money":"http://rss.cnn.com/rss/money_topstories.rss",
+        "CNBC":"http://www.cnbc.com/id/19746125/device/rss/rss.xml",
+        "Fortune":"http://fortune.com/feed/",
+        "Yahoo Finance":"https://finance.yahoo.com/news/rssindex" 
+    }
+    
+    NewScrap(urls,dbName)
+    print("business-scrapped")
+   

@@ -180,7 +180,7 @@ if __name__=='__main__':
 
     #hours
 
-    schedule.every(6).hours.do(TotalNewsScrap)
+    schedule.every(10).minutes.do(TotalNewsScrap)
     # schedule.every(6).hours.do(AW_scrap)
     # schedule.every(6).hours.do(technology_scrap)
     # schedule.every(6).hours.do(sports_scrap)

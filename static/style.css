@@ -39,8 +39,11 @@
 }
 
 
-.container1{
-    background-color:green;
+.newsbox{
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 50px;
+    margin-left: 50px;
     padding-left: 50px;
     padding-right: 50px;
 }

@@ -4,6 +4,7 @@
            Total no of news  = {{data|length}}{#Total no of  comment#}
             {% for mainkey in data%}
             
+            
             <a href={{data[mainkey].Link}}><h3 style="color: black;">{{data[mainkey].Title}}</h3></a>
             <h4>From: {{data[mainkey].Publisher}}</h4>
             {{data[mainkey].Publish_Date}}
@@ -11,7 +12,7 @@
                 <p>{{data[mainkey].Description  }}</p>
 
 
-           
+           </div>
             {% endfor %}
 
         </body>

@@ -2,11 +2,12 @@
     {% block content %}
 
         {% for news in news_list %}
-        
+        <div class="newsbox">
             <a href={{news['Link']}}><h3>{{news['Title']}}</h3></a>
             <h4>From: {{news['Publisher']}}</h4>
             {{news['Publish_Date']}}
                 <p>{{news['Description'] }}</p>
+        </div>
         {% endfor %}
 
     {% endblock%}

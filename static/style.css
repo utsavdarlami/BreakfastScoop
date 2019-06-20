@@ -37,3 +37,10 @@
 .pmain{
     text-align: justify;
 }
+
+
+.container1{
+    background-color:green;
+    padding-left: 50px;
+    padding-right: 50px;
+}

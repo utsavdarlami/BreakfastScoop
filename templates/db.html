@@ -2,11 +2,10 @@
     {% block content %}
 
         {% for news in news_list %}
-        <div class="newsbox">
-            <a href={{news['Link']}}><h3>{{news['Title']}}</h3></a>
-            <h4>From: {{news['Publisher']}}</h4>
-            {{news['Publish_Date']}}
-                <p>{{news['Description'] }}</p>
+        <div style="margin-top: 50px; margin-left:200px; margin-right: 200px; padding-left:20px; padding-top:20px; padding-right:5px; border:1px solid black;">
+            <a href={{news['Link']}}><h3 style="color: black;">{{news['Title']}}</h3></a>
+            <p style="font-size: 18px;">{{news['Description'] }}</p>
+            <p style="text-align:right; text-decoration: underline; font-size:15px;">(From: {{news['Publisher']}} , {{news['Publish_Date']}})</p>
         </div>
         {% endfor %}
 

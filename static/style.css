@@ -38,9 +38,16 @@
     text-align: justify;
 }
 
+.topnav a{
+    font-size: 20px;
+}
 
+.topnav a:hover{
+    background-color: grey;
+}
+ 
 .newsbox{
-    margin-right: 200px;
-    margin-top: 50px;
-    margin-left: 50px;
+  margin-top: 200px; 
+  margin-left:300px; 
+  margin-right: 100px;">
 }

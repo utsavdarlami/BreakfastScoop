@@ -2,7 +2,7 @@
     {% block content %}
 
         {% for news in news_list %}
-        <div style="margin-top: 50px; margin-left:200px; margin-right: 200px; padding-left:20px; padding-top:20px; padding-right:5px; border:1px solid black;">
+        <div style="padding-left:20px; padding-top:20px; padding-right:5px; border:1px solid red; max-width: 900px; margin: auto;  margin-top:5px; margin-bottom: 50px;">
             <a href={{news['Link']}}><h3 style="color: black;">{{news['Title']}}</h3></a>
             <p style="font-size: 18px;">{{news['Description'] }}</p>
             <p style="text-align:right; text-decoration: underline; font-size:15px;">(From: {{news['Publisher']}} , {{news['Publish_Date']}})</p>

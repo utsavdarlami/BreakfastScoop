@@ -16,54 +16,56 @@
 </head>
 
 <body>
-	<header class="mainheader">
-		<h1 style="font-size: 65px;">Breakfast Scoop</h1>
-	</header>
+		<header class="mainheader">
+				<h1 style="font-size: 65px;">Breakfast Scoop</h1>
+		</header>
 
-		<nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
-			<div class="topnav">
-			<ul class="navbar-nav">
-    			<li class="nav-item">
-				<a class="nav-link" href="{{url_for("home")}}">Home</a>
-    			</li>
-    			<li class="nav-item">
-      				<a class="nav-link"  href="{{url_for("test2")}}">Nepal News</a>
-    			</li>
 
-    			<li class="nav-item">
-      				<a class="nav-link"  href={{url_for("worldnews")}}>World News</a>
-    			</li>
-				<li class="nav-item">
-      				<a class="nav-link"  href="{{url_for("politics")}}">Politics</a>
-    			</li>
-    			<li class="nav-item">
-      				<a class="nav-link"  href="{{url_for("business")}}">Business</a>
-    			</li>
-    			<li class="nav-item">
-      				<a class="nav-link"  href="{{url_for("sports")}}">Sports</a>
-    			</li>
-    			<li class="nav-item">
-      				<a class="nav-link" href="{{url_for("technology")}}">Technology</a>
-    			</li>
-    			<li class="nav-item">
-      				<a class="nav-link"  href="{{url_for("entertainment")}}">Entertainment</a>
-    			</li>
-				<li class="nav-item">
-      				<a class="nav-link"  href="{{url_for("science")}}">Science</a>
-    			</li>
-				<li class="nav-item">
-      				<a class="nav-link"  href="{{url_for("arts_culture")}}">Arts And Culture</a>
-    			</li>
-			  </ul>
-			  </div>
-		</nav>
+		<nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
+				<ul class="navbar-nav">
+						<li class="nav-item">
+								<a class="nav-link" href="{{url_for("home")}}" style="color: whitesmoke;">Home</a>
+								</li>
+								<li class="nav-item">
+									  <a class="nav-link"  href="{{url_for("test2")}}" style="color: whitesmoke;">Nepal News</a>
+								</li>
+				
+								<li class="nav-item">
+									  <a class="nav-link"  href={{url_for("worldnews")}} style="color: whitesmoke;">World News</a>
+								</li>
+								<li class="nav-item">
+									  <a class="nav-link"  href="{{url_for("politics")}}" style="color: whitesmoke;">Politics</a>
+								</li>
+								<li class="nav-item">
+									  <a class="nav-link"  href="{{url_for("business")}}" style="color: whitesmoke;">Business</a>
+								</li>
+								<li class="nav-item">
+									  <a class="nav-link"  href="{{url_for("sports")}}" style="color: whitesmoke;">Sports</a>
+								</li>
+								<li class="nav-item">
+									  <a class="nav-link" href="{{url_for("technology")}}" style="color: whitesmoke;">Technology</a>
+								</li>
+								<li class="nav-item">
+									  <a class="nav-link"  href="{{url_for("entertainment")}}" style="color: whitesmoke;">Entertainment</a>
+								</li>
+								<li class="nav-item">
+									  <a class="nav-link"  href="{{url_for("science")}}" style="color: whitesmoke;">Science</a>
+								</li>
+								<li class="nav-item">
+									  <a class="nav-link"  href="{{url_for("arts_culture")}}" style="color: whitesmoke;">Arts And Culture</a>
+								</li>
+				</ul>
+			  </nav>
+			  <br>
 
+	<div class="container" style="border: 2px solid black">
 	{% block content %}
 
 	 <!--ALl our contents-->
 
 	{% endblock  %}
-
+	</div>
 
 </body>
+
 

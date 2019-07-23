@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+    
+    {%block titlecontent%}
+    	<h1 class="headingmain">{{TitleOfPage}}</h1>
+    {%endblock%}
+    {% block content %}
+
+        {% for news in news_list %}
+        
+            <a href={{news['Link']}}><h3>{{news['Title']}}</h3></a>
+            <h4>From: {{news['Publisher']}}</h4>
+            {{news['Publish_Date']}}
+                <p>{{news['Description'] }}</p>
+        {% endfor %}
+
+    {% endblock%}
+
+
+
+<!--
+
+ {% for mainkey in data %}
+            <h1>{{ mainkey }}</h1>
+            {{data[mainkey].items()}}
+        
+            {% endfor %}
+
+    ////
+
+
+
+    {% for mainkey in data %}
+    <h1>{{ mainkey }}</h1>
+
+    {% for key, value in data[mainkey].items() %}
+    <p><strong>{{ key }}</strong><span>{{ value }}</span></p>
+    {% endfor %}
+
+    {% endfor %}
+-->

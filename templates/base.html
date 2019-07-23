@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Breakfast Scoop</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<!-- style sheet link
+-->
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+
+
+</head>
+
+<body>
+	<header class="mainheader">
+		<h1 style="font-size: 65px;">Breakast Scoop</h1>
+	</header>
+
+		<nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+			<ul class="navbar-nav">
+    			<li class="nav-item">
+      				<a class="navbar-brand"  href="{{url_for("home")}}">Home</a>
+    			</li>
+    			<li class="nav-item">
+      				<a class="nav-link"  href="{{url_for("test2")}}">Nepal News</a>
+    			</li>
+
+    			<li class="nav-item">
+      				<a class="nav-link"  href={{url_for("worldnews")}}>World News</a>
+    			</li>
+				<li class="nav-item">
+      				<a class="nav-link"  href="{{url_for("politics")}}">Politics</a>
+    			</li>
+    			<li class="nav-item">
+      				<a class="nav-link"  href="{{url_for("business")}}">Business</a>
+    			</li>
+    			<li class="nav-item">
+      				<a class="nav-link"  href="{{url_for("sports")}}">Sports</a>
+    			</li>
+    			<li class="nav-item">
+      				<a class="nav-link" href="{{url_for("technology")}}">Technology</a>
+    			</li>
+    			<li class="nav-item">
+      				<a class="nav-link"  href="{{url_for("entertainment")}}">Entertainment</a>
+    			</li>
+				<li class="nav-item">
+      				<a class="nav-link"  href="{{url_for("science")}}">Science</a>
+    			</li>
+				<li class="nav-item">
+      				<a class="nav-link"  href="{{url_for("arts_culture")}}">Arts And Culture</a>
+    			</li>
+  			</ul>
+		</nav>
+	{%block titlecontent%}
+    	 <!--ALl title contents-->
+
+    {%endblock%}
+	{% block content %}
+
+	 <!--ALl our contents-->
+
+	{% endblock  %}
+
+
+</body>
+

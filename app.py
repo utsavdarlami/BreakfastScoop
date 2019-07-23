@@ -39,7 +39,42 @@ mongo = PyMongo(app)
 """ all the routess """
 @app.route("/")
 def home():
-    return render_template('home.html')
+    news_sports           = mongo.db.totalNews.find({"Category": "SPORTS"})
+    news_tech             = mongo.db.totalNews.find({"Category": "TECH"})
+    news_business         = mongo.db.totalNews.find({"Category": "BUSINESS"})
+    news_worldnews        = mongo.db.totalNews.find({"Category": "WORLDNEWS"})
+    news_entertainment    = mongo.db.totalNews.find({"Category": "ENTERTAINMENT"})
+    news_politics         = mongo.db.totalNews.find({"Category": "POLITICS"})
+    news_science          = mongo.db.totalNews.find({"Category": "SCIENCE"})
+    news_arts             = mongo.db.totalNews.find({"Category": "ARTS_CULTURE"})
+    #single view
+    single_sports         = mongo.db.totalNews.find_one({"Category": "SPORTS"})
+    single_tech           = mongo.db.totalNews.find_one({"Category": "TECH"})
+    single_business       = mongo.db.totalNews.find_one({"Category": "BUSINESS"})
+    single_worldnews      = mongo.db.totalNews.find_one({"Category": "WORLDNEWS"})
+    single_entertainment  = mongo.db.totalNews.find_one({"Category": "ENTERTAINMENT"})
+    single_politics       = mongo.db.totalNews.find_one({"Category": "POLITICS"})
+    single_science        = mongo.db.totalNews.find_one({"Category": "SCIENCE"})
+    single_arts           = mongo.db.totalNews.find_one({"Category": "ARTS_CULTURE"})
+
+    return render_template('changehome.html',
+                            news_sports=news_sports[1:6],
+                            news_tech=news_tech[1:6],
+                            news_business=news_business[1:6],
+                            news_worldnews=news_worldnews[1:6],
+                            news_entertainment=news_entertainment[1:6],
+                            news_politics=news_politics[1:6],
+                            news_science=news_science[1:6],
+                            news_arts=news_arts[1:6],
+                            single_sports=single_sports,
+                            single_tech=single_tech,
+                            single_business=single_business,
+                            single_worldnews=single_worldnews,
+                            single_entertainment=single_entertainment,
+                            single_politics=single_politics,
+                            single_science=single_science,
+                            single_arts=single_arts
+                        )
 #category urls
 @app.route("/sports/")
 def sports():
@@ -104,7 +139,7 @@ def test1():
 
     return render_template('index.html',data =(data))
 
-@app.route("/api2/")
+@app.route("/nepal/")
 def test2():
     news_list = mongo.db.allNews.find().sort("Publish_Date")
     #news_list = mongo.db.allNews.find()
@@ -180,7 +215,7 @@ if __name__=='__main__':
 
     #hours
 
-    schedule.every(2).hours.do(TotalNewsScrap)
+    schedule.every(6).hours.do(TotalNewsScrap)
     # schedule.every(6).hours.do(AW_scrap)
     # schedule.every(6).hours.do(technology_scrap)
     # schedule.every(6).hours.do(sports_scrap)

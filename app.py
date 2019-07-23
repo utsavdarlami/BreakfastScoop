@@ -39,6 +39,8 @@ mongo = PyMongo(app)
 """ all the routess """
 @app.route("/")
 def home():
+    all_news              = mongo.db.totalNews.find()
+
     news_sports           = mongo.db.totalNews.find({"Category": "SPORTS"})
     news_tech             = mongo.db.totalNews.find({"Category": "TECH"})
     news_business         = mongo.db.totalNews.find({"Category": "BUSINESS"})
@@ -56,7 +58,6 @@ def home():
     single_politics       = mongo.db.totalNews.find_one({"Category": "POLITICS"})
     single_science        = mongo.db.totalNews.find_one({"Category": "SCIENCE"})
     single_arts           = mongo.db.totalNews.find_one({"Category": "ARTS_CULTURE"})
-
     return render_template('changehome.html',
                             news_sports=news_sports[1:6],
                             news_tech=news_tech[1:6],
@@ -73,7 +74,8 @@ def home():
                             single_entertainment=single_entertainment,
                             single_politics=single_politics,
                             single_science=single_science,
-                            single_arts=single_arts
+                            single_arts=single_arts,
+                            all_news=all_news
                         )
 #category urls
 @app.route("/sports/")

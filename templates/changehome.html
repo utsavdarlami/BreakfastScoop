@@ -1,118 +1,109 @@
 {% extends "base.html" %}
     {% block content %}
-
-	<section class="sectionmain">
-
-	<!-- <Sports Section> -->
-	<h1 class="headingmain">Sports</h1>
-			{% for news in news_sports %}
-        	    <a style="text-decoration: none;" href={{news['Link']}}><h2>{{news['Title']}}</h2></a>
-        	    <h5>From: {{news['Publisher']}}</h5>
-        	    {{news['Publish_Date'].strftime('%Y-%m-%d')}}
-        	       	<p class="pmain">{{news['Description'] }}</p>			
-			<hr>
-			{% endfor %}
-
+	<!-- <div class="container"> -->
+		<div class="row justify-content-md-center;">
+			<div class="col-8">
+				<div class="jumbotron" style="background-color:greywhite"> 
+						<h1 class="headingmain">Sports</h1>
+								{% for news in news_sports %}
+									<a style="text-decoration: none;color: #616161" href={{news['Link']}}><h2>{{news['Title']}}</h2></a>
+				
+										<p class="pmain" style="font-family: serif; font-size: 18px;">{{news['Description'] }}</p>	
+										<p style="text-align:right; text-decoration: underline; font-size:15px; color: #757575">From: {{news['Publisher']}}, {{news['Publish_Date'].strftime('%Y-%m-%d')}}</p>		
+								<hr>
+								{% endfor %}
+								
+					</div>
 	<!-- <news_tech > -->
-	<h1 class="headingmain">Technology</h1>
-			{% for news in news_tech %}
-            <a style="text-decoration: none;" href={{news['Link']}}><h2>{{news['Title']}}</h2></a>
-            <h5>From: {{news['Publisher']}}</h5>
-            {{news['Publish_Date'].strftime('%Y-%m-%d')}}
-               	<p class="pmain">{{news['Description'] }}</p>			
-		<hr>
-		{% endfor %}
-
-	<!-- <news_business Section> -->
-	<h1 class="headingmain">Business</h1>
-		{% for news in news_business %}
-            <a style="text-decoration: none;" href={{news['Link']}}><h2>{{news['Title']}}</h2></a>
-            <h5>From: {{news['Publisher']}}</h5>
-            {{news['Publish_Date'].strftime('%Y-%m-%d')}}
-               	<p class="pmain">{{news['Description'] }}</p>			
-		<hr>
-		{% endfor %}
+			<div class="jumbotron" style="background-color:greywhite">
+					<h1 class="headingmain">Technology</h1>
+							{% for news in news_tech %}
+							<a style="text-decoration: none; color: #616161" href={{news['Link']}}><h2>{{news['Title']}}</h2></a>
+			
+								<p class="pmain" style="font-family: serif font-size: 18px;">{{news['Description'] }}</p>	
+								<p style="text-align:right; text-decoration: underline; font-size:15px; color: #757575">From: {{news['Publisher']}}, {{news['Publish_Date'].strftime('%Y-%m-%d')}}</p>		
+						<hr>
+						{% endfor %}
+				</div>
+				<!-- <news_business Section> -->
+				<div class="jumbotron" style="background-color:greywhite">	
+					<h1 class="headingmain">Business</h1>
+						{% for news in news_business %}
+							<a style="text-decoration: none;color: #616161" href={{news['Link']}}><h2>{{news['Title']}}</h2></a>
+							<h5 style="color: #757575">From: {{news['Publisher']}}</h5>
+							{{news['Publish_Date'].strftime('%Y-%m-%d')}}
+								<p class="pmain" style="font-family: serif font-size: 18px;">{{news['Description'] }}</p>			
+						<hr>
+						{% endfor %}
+				</div>
+				<!-- <news_worldnews Section> -->
+				<div class="jumbotron" style="background-color:greywhite">
+					<h1 class="headingmain">World News</h1>
+						{% for news in news_worldnews %}
+							<a style="text-decoration: none;color: #616161" href={{news['Link']}}><h2>{{news['Title']}}</h2></a>
+							<h5 style="color: #757575">From: {{news['Publisher']}}</h5>
+							{{news['Publish_Date'].strftime('%Y-%m-%d')}}
+								<p class="pmain" style="font-family: serif font-size: 18px;">{{news['Description'] }}</p>			
+						<hr>
+						{% endfor %}
+				</div>
+			
+				<!-- <news_entertainment Section> -->
+				<div class="jumbotron" style="background-color:greywhite">
+					<h1 class="headingmain" >Entertainment</h1>
+						{% for news in news_entertainment %}
+							<a style="text-decoration: none;color: #616161" href={{news['Link']}}><h2>{{news['Title']}}</h2></a>
+							<h5 style="color: #757575">From: {{news['Publisher']}}</h5>
+							{{news['Publish_Date'].strftime('%Y-%m-%d')}}
+								<p class="pmain" style="font-family: serif font-size: 18px;">{{news['Description'] }}</p>			
+						<hr>
+						{% endfor %}
+				</div>
+				<!-- <news_politics Section> -->
+				<div class="jumbotron" style="background-color:greywhite">
+					<h1 class="headingmain" >Politics</h1>
+						{% for news in news_politics %}
+							<a style="text-decoration: none;color: #616161" href={{news['Link']}}><h2>{{news['Title']}}</h2></a>
+							<h5 style="color: #757575">From: {{news['Publisher']}}</h5>
+							{{news['Publish_Date'].strftime('%Y-%m-%d')}}
+								<p class="pmain" style="font-family: serif font-size: 18px;">{{news['Description'] }}</p>			
+						<hr>
+						{% endfor %}
+				</div>
+					<!-- <news_science Section> -->
+				<div class="jumbotron" style="background-color:greywhite">
+					<h1 class="headingmain">Science</h1>
+						{% for news in news_science %}
+							<a style="text-decoration: none;color: #616161" href={{news['Link']}}><h2>{{news['Title']}}</h2></a>
+								<p class="pmain" style="font-family: serif font-size: 18px;">{{news['Description'] }}</p>
+								<p style="text-align:right; text-decoration: underline; font-size:15px; color: #757575">From: {{news['Publisher']}}, {{news['Publish_Date'].strftime('%Y-%m-%d')}}</p>
 	
-	<!-- <news_worldnews Section> -->
-	<h1 class="headingmain">World News</h1>
-		{% for news in news_worldnews %}
-            <a style="text-decoration: none;" href={{news['Link']}}><h2>{{news['Title']}}</h2></a>
-            <h5>From: {{news['Publisher']}}</h5>
-            {{news['Publish_Date'].strftime('%Y-%m-%d')}}
-               	<p class="pmain">{{news['Description'] }}</p>			
-		<hr>
-		{% endfor %}
-
-	<!-- <news_entertainment Section> -->
-	<h1 class="headingmain" >Entertainment</h1>
-		{% for news in news_entertainment %}
-            <a style="text-decoration: none;" href={{news['Link']}}><h2>{{news['Title']}}</h2></a>
-            <h5>From: {{news['Publisher']}}</h5>
-            {{news['Publish_Date'].strftime('%Y-%m-%d')}}
-               	<p class="pmain">{{news['Description'] }}</p>			
-		<hr>
-		{% endfor %}
-	<!-- <news_politics Section> -->
-	<h1 class="headingmain" >Politics</h1>
-		{% for news in news_politics %}
-            <a style="text-decoration: none;" href={{news['Link']}}><h2>{{news['Title']}}</h2></a>
-            <h5>From: {{news['Publisher']}}</h5>
-            {{news['Publish_Date'].strftime('%Y-%m-%d')}}
-               	<p class="pmain">{{news['Description'] }}</p>			
-		<hr>
-		{% endfor %}
-
-		<!-- <news_science Section> -->
-	<h1 class="headingmain">Science</h1>
-		{% for news in news_science %}
-            <a style="text-decoration: none;" href={{news['Link']}}><h2>{{news['Title']}}</h2></a>
-            <h5>From: {{news['Publisher']}}</h5>
-            {{news['Publish_Date'].strftime('%Y-%m-%d')}}
-               	<p class="pmain">{{news['Description'] }}</p>			
-		<hr>
-		{% endfor %}
-
-		<!-- <news_arts Section> -->
-	<h1 class="headingmain">Arts</h1>
-		{% for news in news_arts %}
-            <a style="text-decoration: none;" href={{news['Link']}}><h2>{{news['Title']}}</h2></a>
-            <h5>From: {{news['Publisher']}}</h5>
-            {{news['Publish_Date'].strftime('%Y-%m-%d')}}
-               	<p class="pmain">{{news['Description'] }}</p>			
-		<hr>
-		{% endfor %}
-
-	</section>
-
-
-
-		<aside class="asidemain">
-
-		<a style="text-decoration: none;" href={{single_sports['Link']}}><h4>{{single_sports['Title']}}</h4></a>
-		<hr>
-		
-		<a style="text-decoration: none;" href={{single_tech['Link']}}><h4>{{single_tech['Title']}}</h4></a>
-		<hr>
-		
-		<a style="text-decoration: none;" href={{single_business['Link']}}><h4>{{single_business['Title']}}</h4></a>
-		<hr>
-
-		<a style="text-decoration: none;" href={{single_worldnews['Link']}}><h4>{{single_worldnews['Title']}}</h4></a>
-		<hr>
-
-		<a style="text-decoration: none;" href={{single_entertainment['Link']}}><h4>{{single_entertainment['Title']}}</h4></a>
-		<hr>
-
-		<a style="text-decoration: none;" href={{single_politics['Link']}}><h4>{{single_politics['Title']}}</h4></a>
-		<hr>
-
-		<a style="text-decoration: none;" href={{single_science['Link']}}><h4>{{single_science['Title']}}</h4></a>
-		<hr>
-
-		<a style="text-decoration: none;" href={{single_arts['Link']}}><h4>{{single_arts['Title']}}</h4></a>
-		<hr>
-
-	</aside>
+						<hr>
+						{% endfor %}
+				</div>
+			
+					<!-- <news_arts Section> -->
+				<div class="jumbotron" style="background-color:greywhite">
+					<h1 class="headingmain">Arts</h1>
+						{% for news in news_arts %}
+							<a style="text-decoration: none;color: #616161" href={{news['Link']}}><h2>{{news['Title']}}</h2></a>
+							<h5 style="color: #757575">From: {{news['Publisher']}}</h5>
+							{{news['Publish_Date'].strftime('%Y-%m-%d')}}
+								<p class="pmain" style="font-family: serif font-size: 18px;">{{news['Description'] }}</p>			
+						<hr>
+						{% endfor %}
+				</div>					
+			</div>
+			<div class=" col-4">
+				{%for  news in all_news%}
+					<a style="text-decoration: none;color: #616161" href={{news['Link']}}><h4>{{news['Title']}}</h4></a>
+					<hr>
+									
+				{%endfor%}
+				
+			</div>
+		</div>
+	<!-- </div> -->
 
 	
 {% endblock%}

@@ -1,33 +1,30 @@
 {% extends "base.html" %}
     {% block content %}
 
+	<section class="sectionmain">
+
 	<!-- <Sports Section> -->
 	<h1 class="headingmain">Sports</h1>
-	<section class="sectionmain">
-		{% for news in news_sports %}
-            <a style="text-decoration: none;" href={{news['Link']}}><h2>{{news['Title']}}</h2></a>
-            <h5>From: {{news['Publisher']}}</h5>
-            {{news['Publish_Date'].strftime('%Y-%m-%d')}}
-               	<p class="pmain">{{news['Description'] }}</p>			
-		<hr>
-		{% endfor %}
-	</section>
+			{% for news in news_sports %}
+        	    <a style="text-decoration: none;" href={{news['Link']}}><h2>{{news['Title']}}</h2></a>
+        	    <h5>From: {{news['Publisher']}}</h5>
+        	    {{news['Publish_Date'].strftime('%Y-%m-%d')}}
+        	       	<p class="pmain">{{news['Description'] }}</p>			
+			<hr>
+			{% endfor %}
 
 	<!-- <news_tech > -->
 	<h1 class="headingmain">Technology</h1>
-	<section class="sectionmain">
-		{% for news in news_tech %}
+			{% for news in news_tech %}
             <a style="text-decoration: none;" href={{news['Link']}}><h2>{{news['Title']}}</h2></a>
             <h5>From: {{news['Publisher']}}</h5>
             {{news['Publish_Date'].strftime('%Y-%m-%d')}}
                	<p class="pmain">{{news['Description'] }}</p>			
 		<hr>
 		{% endfor %}
-	</section>
 
 	<!-- <news_business Section> -->
 	<h1 class="headingmain">Business</h1>
-	<section class="sectionmain">
 		{% for news in news_business %}
             <a style="text-decoration: none;" href={{news['Link']}}><h2>{{news['Title']}}</h2></a>
             <h5>From: {{news['Publisher']}}</h5>
@@ -35,11 +32,9 @@
                	<p class="pmain">{{news['Description'] }}</p>			
 		<hr>
 		{% endfor %}
-	</section>
 	
 	<!-- <news_worldnews Section> -->
 	<h1 class="headingmain">World News</h1>
-	<section class="sectionmain">
 		{% for news in news_worldnews %}
             <a style="text-decoration: none;" href={{news['Link']}}><h2>{{news['Title']}}</h2></a>
             <h5>From: {{news['Publisher']}}</h5>
@@ -47,11 +42,9 @@
                	<p class="pmain">{{news['Description'] }}</p>			
 		<hr>
 		{% endfor %}
-	</section>
 
 	<!-- <news_entertainment Section> -->
-	<h1 class="headingmain">Entertainment</h1>
-	<section class="sectionmain">
+	<h1 class="headingmain" >Entertainment</h1>
 		{% for news in news_entertainment %}
             <a style="text-decoration: none;" href={{news['Link']}}><h2>{{news['Title']}}</h2></a>
             <h5>From: {{news['Publisher']}}</h5>
@@ -59,10 +52,8 @@
                	<p class="pmain">{{news['Description'] }}</p>			
 		<hr>
 		{% endfor %}
-	</section>
 	<!-- <news_politics Section> -->
-	<h1 class="headingmain">Politics</h1>
-	<section class="sectionmain">
+	<h1 class="headingmain" >Politics</h1>
 		{% for news in news_politics %}
             <a style="text-decoration: none;" href={{news['Link']}}><h2>{{news['Title']}}</h2></a>
             <h5>From: {{news['Publisher']}}</h5>
@@ -70,11 +61,9 @@
                	<p class="pmain">{{news['Description'] }}</p>			
 		<hr>
 		{% endfor %}
-	</section>
 
 		<!-- <news_science Section> -->
 	<h1 class="headingmain">Science</h1>
-	<section class="sectionmain">
 		{% for news in news_science %}
             <a style="text-decoration: none;" href={{news['Link']}}><h2>{{news['Title']}}</h2></a>
             <h5>From: {{news['Publisher']}}</h5>
@@ -82,11 +71,9 @@
                	<p class="pmain">{{news['Description'] }}</p>			
 		<hr>
 		{% endfor %}
-	</section>
 
 		<!-- <news_arts Section> -->
 	<h1 class="headingmain">Arts</h1>
-	<section class="sectionmain">
 		{% for news in news_arts %}
             <a style="text-decoration: none;" href={{news['Link']}}><h2>{{news['Title']}}</h2></a>
             <h5>From: {{news['Publisher']}}</h5>
@@ -94,31 +81,35 @@
                	<p class="pmain">{{news['Description'] }}</p>			
 		<hr>
 		{% endfor %}
+
 	</section>
+
+
+
 		<aside class="asidemain">
 
-		<a style="text-decoration: none;" href={{single_sports['Link']}}><h2>{{single_sports['Title']}}</h2></a>
+		<a style="text-decoration: none;" href={{single_sports['Link']}}><h4>{{single_sports['Title']}}</h4></a>
 		<hr>
 		
-		<a style="text-decoration: none;" href={{single_tech['Link']}}><h2>{{single_tech['Title']}}</h2></a>
+		<a style="text-decoration: none;" href={{single_tech['Link']}}><h4>{{single_tech['Title']}}</h4></a>
 		<hr>
 		
-		<a style="text-decoration: none;" href={{single_business['Link']}}><h2>{{single_business['Title']}}</h2></a>
+		<a style="text-decoration: none;" href={{single_business['Link']}}><h4>{{single_business['Title']}}</h4></a>
 		<hr>
 
-		<a style="text-decoration: none;" href={{single_worldnews['Link']}}><h2>{{single_worldnews['Title']}}</h2></a>
+		<a style="text-decoration: none;" href={{single_worldnews['Link']}}><h4>{{single_worldnews['Title']}}</h4></a>
 		<hr>
 
-		<a style="text-decoration: none;" href={{single_entertainment['Link']}}><h2>{{single_entertainment['Title']}}</h2></a>
+		<a style="text-decoration: none;" href={{single_entertainment['Link']}}><h4>{{single_entertainment['Title']}}</h4></a>
 		<hr>
 
-		<a style="text-decoration: none;" href={{single_politics['Link']}}><h2>{{single_politics['Title']}}</h2></a>
+		<a style="text-decoration: none;" href={{single_politics['Link']}}><h4>{{single_politics['Title']}}</h4></a>
 		<hr>
 
-		<a style="text-decoration: none;" href={{single_science['Link']}}><h2>{{single_science['Title']}}</h2></a>
+		<a style="text-decoration: none;" href={{single_science['Link']}}><h4>{{single_science['Title']}}</h4></a>
 		<hr>
 
-		<a style="text-decoration: none;" href={{single_arts['Link']}}><h2>{{single_arts['Title']}}</h2></a>
+		<a style="text-decoration: none;" href={{single_arts['Link']}}><h4>{{single_arts['Title']}}</h4></a>
 		<hr>
 
 	</aside>

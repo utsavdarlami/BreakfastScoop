@@ -1,4 +1,8 @@
 {% extends "base.html" %}
+    
+    {%block titlecontent%}
+    	<h1 class="headingmain">{{TitleOfPage}}</h1>
+    {%endblock%}
     {% block content %}
 
         {% for news in news_list %}

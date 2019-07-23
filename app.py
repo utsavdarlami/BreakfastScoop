@@ -81,52 +81,52 @@ def sports():
     news_list = mongo.db.totalNews.find({"Category": "SPORTS"})
     #news_list = mongo.db.allNews.find()
 
-    return render_template('db.html',news_list =news_list)
+    return render_template('db.html',TitleOfPage="Sports",news_list =news_list)
 
 @app.route("/technology/")
 def technology():
     news_list = mongo.db.totalNews.find({"Category": "TECH"})
     #news_list = mongo.db.allNews.find()
 
-    return render_template('db.html',news_list =news_list)
+    return render_template('db.html',TitleOfPage="Technology",news_list =news_list)
 
 @app.route("/business/")
 def business():
     news_list = mongo.db.totalNews.find({"Category": "BUSINESS"})
     #news_list = mongo.db.allNews.find()
-    return render_template('db.html',news_list =news_list)
+    return render_template('db.html',TitleOfPage="Business",news_list =news_list)
 
 @app.route("/worldnews/")
 def worldnews():
     news_list = mongo.db.totalNews.find({"Category": "WORLDNEWS"})
     #news_list = mongo.db.allNews.find()
-    return render_template('db.html',news_list =news_list)
+    return render_template('db.html',TitleOfPage="Worldnews",news_list =news_list)
 
 @app.route("/entertainment/")
 def entertainment():
     news_list = mongo.db.totalNews.find({"Category": "ENTERTAINMENT"})
     #news_list = mongo.db.allNews.find()
-    return render_template('db.html',news_list =news_list)
+    return render_template('db.html',TitleOfPage="Entertainment",news_list =news_list)
 @app.route("/politics/")
 def politics():
     news_list = mongo.db.totalNews.find({"Category": "POLITICS"})
     #news_list = mongo.db.allNews.find()
 
-    return render_template('db.html',news_list =news_list)
+    return render_template('db.html',TitleOfPage="Politics",news_list =news_list)
 
 @app.route("/science/")
 def science():
     news_list = mongo.db.totalNews.find({"Category": "SCIENCE"})
     #news_list = mongo.db.allNews.find()
 
-    return render_template('db.html',news_list =news_list)
+    return render_template('db.html',TitleOfPage="Science",news_list =news_list)
 
 
 @app.route("/arts_culture/")
 def arts_culture():
     news_list = mongo.db.totalNews.find({"Category": "ARTS_CULTURE"})
     #news_list = mongo.db.allNews.find()
-    return render_template('db.html',news_list =news_list)
+    return render_template('db.html',TitleOfPage="Arts And Culture",news_list =news_list)
 
 
 #---end---
@@ -144,7 +144,7 @@ def test2():
     news_list = mongo.db.allNews.find().sort("Publish_Date")
     #news_list = mongo.db.allNews.find()
 
-    return render_template('db.html',news_list =news_list)
+    return render_template('db.html',TitleOfPage="Nepal News",news_list =news_list)
 
 
 """@app.route("/api3/")

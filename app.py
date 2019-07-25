@@ -75,7 +75,7 @@ def home():
                             single_politics=single_politics,
                             single_science=single_science,
                             single_arts=single_arts,
-                            all_news=all_news
+                            all_news=all_news[1:96]
                         )
 #category urls
 @app.route("/sports/")

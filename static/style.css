@@ -55,3 +55,17 @@
   margin-right: 100px;">
 }
 
+
+.a_title{
+    font-size: 1.2em;
+    color: whitesmoke;
+}
+
+.a_title:hover{
+    background-color: white;
+    color: black;
+}
+
+.jumbotron-background{
+    background-image: linear-gradient(to right, #cfd9df 0%, #e2ebf0 100%);
+}

@@ -16,9 +16,9 @@ from threading import Thread
 
 
 # our news Scrapper 
-# from Scrapper.All_scrap import business_scrap,AW_scrap,nep_scrap,sports_scrap,technology_scrap
 # from nep_scrap import NewsScrapper 
-from totalscrap import TotalNewsScrap
+# from totalscrap import TotalNewsScrap
+from asyncscrap import TotalNewsScrap
 
 #others
 import json

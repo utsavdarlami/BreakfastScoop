@@ -38,8 +38,28 @@ doc= ["Patriots' Cardona promoted to lieutenant in Navy Joe Cardona, who has spe
 myNBmodel = pickle.load( open('myCBmodel.pkl','rb'))
 
 
+    
+remove_this=("“","’s","s’","’t")
+punctuation_sign = ("!","?","@","?",".",":",";","-","&",",","%")
+
 def predictNewsCategory(text_doc):
+
     global news_category
+
+    text_doc.replace("\n"," ")
+
+    text_doc.replace("\r"," ")
+
+    text_doc.replace('"','')
+
+    for remove_ in remove_this:    
+        text_doc.replace(remove_,"")
+    for punc_ in punctuation_sign:
+        text_doc.replace(punc_,"")
+        
+    text_doc.replace("'t","")
+    text_doc.replace("'s","")
+    text_doc.replace("'","")
     label = myNBmodel.predict(text_doc)
     return (news_category[label[0]])
 

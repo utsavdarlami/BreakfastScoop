@@ -61,14 +61,6 @@ def home():
                             news_politics=news_politics[1:6],
                             news_science=news_science[1:6],
                             news_arts=news_arts[1:6],
-                            single_sports=single_sports,
-                            single_tech=single_tech,
-                            single_business=single_business,
-                            single_worldnews=single_worldnews,
-                            single_entertainment=single_entertainment,
-                            single_politics=single_politics,
-                            single_science=single_science,
-                            single_arts=single_arts,
                             all_news=all_news[1:96]
                         )
 #category urls

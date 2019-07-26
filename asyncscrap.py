@@ -106,7 +106,6 @@ def TotalNewsScrap():
             soup  = BeautifulSoup(pagesource,'xml')
             item_list = soup.find_all('item')
             for post in item_list:
-                categorys=[]
                 aDic={}
                 title = post.find('title').text # getting title
                 pubdate = post.find('pubDate').text # getting publication data

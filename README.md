@@ -1,12 +1,8 @@
 # BreakfastScoop
 
 ## Installation
-- Install Mongodb 
 
-$ pip install --user pipenv
+$ pipenv install scikit-learn
 
-$ pipenv install
+$ pipenv install seaborn
 
-$ pipenv shell
-
-$ python app.py

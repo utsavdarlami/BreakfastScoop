@@ -16,9 +16,15 @@ from threading import Thread
 
 
 # our news Scrapper 
+<<<<<<< HEAD
+# from nep_scrap import NewsScrapper 
+# from totalscrap import TotalNewsScrap
+from asyncscrap import TotalNewsScrap
+=======
 # from Scrapper.All_scrap import business_scrap,AW_scrap,nep_scrap,sports_scrap,technology_scrap
 # from nep_scrap import NewsScrapper 
 from totalscrap import TotalNewsScrap
+>>>>>>> master
 
 #others
 import json
@@ -39,6 +45,11 @@ mongo = PyMongo(app)
 """ all the routess """
 @app.route("/")
 def home():
+<<<<<<< HEAD
+    all_news              = mongo.db.totalNews.find()
+
+=======
+>>>>>>> master
     news_sports           = mongo.db.totalNews.find({"Category": "SPORTS"})
     news_tech             = mongo.db.totalNews.find({"Category": "TECH"})
     news_business         = mongo.db.totalNews.find({"Category": "BUSINESS"})
@@ -56,7 +67,10 @@ def home():
     single_politics       = mongo.db.totalNews.find_one({"Category": "POLITICS"})
     single_science        = mongo.db.totalNews.find_one({"Category": "SCIENCE"})
     single_arts           = mongo.db.totalNews.find_one({"Category": "ARTS_CULTURE"})
+<<<<<<< HEAD
+=======
 
+>>>>>>> master
     return render_template('changehome.html',
                             news_sports=news_sports[1:6],
                             news_tech=news_tech[1:6],
@@ -73,7 +87,12 @@ def home():
                             single_entertainment=single_entertainment,
                             single_politics=single_politics,
                             single_science=single_science,
+<<<<<<< HEAD
+                            single_arts=single_arts,
+                            all_news=all_news[1:96]
+=======
                             single_arts=single_arts
+>>>>>>> master
                         )
 #category urls
 @app.route("/sports/")

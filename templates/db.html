@@ -1,18 +1,31 @@
 {% extends "base.html" %}
     
     {%block titlecontent%}
+<<<<<<< HEAD
+    	<!-- <h1 class="headingmain"s>{{TitleOfPage}}</h1> -->
+=======
     	<h1 class="headingmain">{{TitleOfPage}}</h1>
+>>>>>>> master
     {%endblock%}
     {% block content %}
+        <div class="justify-content-md-center" >
+            {% for news in news_list %}
+            <div style="margin-bottom: 5px;">
+                <div class="container jumbotron">
+                    <div class="row justify-content-md-center">
+                        <div class="col col-lg-12">
+                            <a href={{news['Link']}}><h3 style="color: black;">{{news['Title']}}</h3></a>
+                
+                            <p style="font-size: 18px;">{{news['Description'] }}</p>
+                            <p style="text-align:right; text-decoration: underline; font-size:15px;">(From: {{news['Publisher']}} , {{news['Publish_Date']}})</p>
+                        </div>                
+                    </div>
 
-        {% for news in news_list %}
-        
-            <a href={{news['Link']}}><h3>{{news['Title']}}</h3></a>
-            <h4>From: {{news['Publisher']}}</h4>
-            {{news['Publish_Date']}}
-                <p>{{news['Description'] }}</p>
-        {% endfor %}
+                </div>
+            </div>
 
+            {% endfor %}
+        </div>
     {% endblock%}
 
 

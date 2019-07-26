@@ -37,7 +37,7 @@ def NewScrap(urls,dbName):
     user_agent = UserAgent()
 
     header ={"user-agent":user_agent.random}
-
+    
 
     for url in urls:
         try:
@@ -60,7 +60,7 @@ def NewScrap(urls,dbName):
                     categorys.append(category.text)
 
                 description =  post.find('description').text
-                soup_description =BeautifulSoup(post.find('description').text,'html.parser')
+                # soup_description =BeautifulSoup(post.find('description').text,'html.parser')
                 # cleaned
                 aDic['scrapTime']= datetime.now().strftime('%Y-%m-%d %H:%M:%S')
                 aDic['Publisher']=url

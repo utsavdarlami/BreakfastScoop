@@ -6,6 +6,9 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
+<<<<<<< HEAD
+scikit-learn = "*"
+=======
 flask = "*"
 scrapy = "*"
 bs4 = "*"
@@ -17,6 +20,7 @@ pymongo = "*"
 flask-pymongo = "*"
 apscheduler = "*"
 schedule = "*"
+>>>>>>> master
 seaborn = "*"
 
 [requires]

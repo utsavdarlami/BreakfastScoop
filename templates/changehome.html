@@ -1,5 +1,106 @@
 {% extends "base.html" %}
     {% block content %}
+<<<<<<< HEAD
+	<!-- <div class="container"> -->
+		<div class="row justify-content-md-center;">
+			<div class="col-8">
+				<div class="jumbotron jumbotron-background"> 
+						<h1 class="headingmain">Sports</h1>
+								{% for news in news_sports %}
+									<a style="text-decoration: none;color: #616161" href={{news['Link']}}><h2>{{news['Title']}}</h2></a>
+				
+										<p class="pmain" style="font-family: serif; font-size: 18px;">{{news['Description'] }}</p>	
+										<p style="text-align:right; text-decoration: underline; font-size:15px; color: #757575">From: {{news['Publisher']}}, {{news['Publish_Date'].strftime('%Y-%m-%d')}}</p>		
+								<hr>
+								{% endfor %}
+								
+					</div>
+	<!-- <news_tech > -->
+			<div class="jumbotron jumbotron-background" style="background-color:greywhite">
+					<h1 class="headingmain">Technology</h1>
+							{% for news in news_tech %}
+							<a style="text-decoration: none; color: #616161" href={{news['Link']}}><h2>{{news['Title']}}</h2></a>
+			
+								<p class="pmain" style="font-family: serif font-size: 18px;">{{news['Description'] }}</p>	
+								<p style="text-align:right; text-decoration: underline; font-size:15px; color: #757575">From: {{news['Publisher']}}, {{news['Publish_Date'].strftime('%Y-%m-%d')}}</p>		
+						<hr>
+						{% endfor %}
+				</div>
+				<!-- <news_business Section> -->
+				<div class="jumbotron jumbotron-background" style="background-color:greywhite">	
+					<h1 class="headingmain">Business</h1>
+						{% for news in news_business %}
+							<a style="text-decoration: none;color: #616161" href={{news['Link']}}><h2>{{news['Title']}}</h2></a>
+							<p class="pmain" style="font-family: serif font-size: 18px;">{{news['Description'] }}</p>	
+							<p style="text-align:right; text-decoration: underline; font-size:15px; color: #757575">From: {{news['Publisher']}}, {{news['Publish_Date'].strftime('%Y-%m-%d')}}</p>			
+						<hr>
+						{% endfor %}
+				</div>
+				<!-- <news_worldnews Section> -->
+				<div class="jumbotron jumbotron-background" style="background-color:greywhite">
+					<h1 class="headingmain">World News</h1>
+						{% for news in news_worldnews %}
+							<a style="text-decoration: none;color: #616161" href={{news['Link']}}><h2>{{news['Title']}}</h2></a>
+							<p class="pmain" style="font-family: serif font-size: 18px;">{{news['Description'] }}</p>	
+								<p style="text-align:right; text-decoration: underline; font-size:15px; color: #757575">From: {{news['Publisher']}}, {{news['Publish_Date'].strftime('%Y-%m-%d')}}</p>				
+						<hr>
+						{% endfor %}
+				</div>
+			
+				<!-- <news_entertainment Section> -->
+				<div class="jumbotron jumbotron-background" style="background-color:greywhite">
+					<h1 class="headingmain" >Entertainment</h1>
+						{% for news in news_entertainment %}
+							<a style="text-decoration: none;color: #616161" href={{news['Link']}}><h2>{{news['Title']}}</h2></a>
+							<p class="pmain" style="font-family: serif font-size: 18px;">{{news['Description'] }}</p>	
+								<p style="text-align:right; text-decoration: underline; font-size:15px; color: #757575">From: {{news['Publisher']}}, {{news['Publish_Date'].strftime('%Y-%m-%d')}}</p>				
+						<hr>
+						{% endfor %}
+				</div>
+				<!-- <news_politics Section> -->
+				<div class="jumbotron jumbotron-background" style="background-color:greywhite">
+					<h1 class="headingmain" >Politics</h1>
+						{% for news in news_politics %}
+							<a style="text-decoration: none;color: #616161" href={{news['Link']}}><h2>{{news['Title']}}</h2></a>
+							<p class="pmain" style="font-family: serif font-size: 18px;">{{news['Description'] }}</p>	
+								<p style="text-align:right; text-decoration: underline; font-size:15px; color: #757575">From: {{news['Publisher']}}, {{news['Publish_Date'].strftime('%Y-%m-%d')}}</p>				
+						<hr>
+						{% endfor %}
+				</div>
+					<!-- <news_science Section> -->
+				<div class="jumbotron jumbotron-background" style="background-color:greywhite">
+					<h1 class="headingmain">Science</h1>
+						{% for news in news_science %}
+							<a style="text-decoration: none;color: #616161" href={{news['Link']}}><h2>{{news['Title']}}</h2></a>
+								<p class="pmain" style="font-family: serif font-size: 18px;">{{news['Description'] }}</p>
+								<p style="text-align:right; text-decoration: underline; font-size:15px; color: #757575">From: {{news['Publisher']}}, {{news['Publish_Date'].strftime('%Y-%m-%d')}}</p>
+	
+						<hr>
+						{% endfor %}
+				</div>
+			
+					<!-- <news_arts Section> -->
+				<div class="jumbotron jumbotron-background" style="background-color:greywhite">
+					<h1 class="headingmain">Arts</h1>
+						{% for news in news_arts %}
+							<a style="text-decoration: none;color: #616161" href={{news['Link']}}><h2>{{news['Title']}}</h2></a>
+							<p class="pmain" style="font-family: serif font-size: 18px;">{{news['Description'] }}</p>	
+								<p style="text-align:right; text-decoration: underline; font-size:15px; color: #757575">From: {{news['Publisher']}}, {{news['Publish_Date'].strftime('%Y-%m-%d')}}</p>					
+						<hr>
+						{% endfor %}
+				</div>					
+			</div>
+			<div class=" col-4">
+				{%for  news in all_news%}
+					<a style="text-decoration: none;color:whitesmoke;" href={{news['Link']}}><h4>{{news['Title']}}</h4></a>
+					<hr>
+									
+				{%endfor%}
+				
+			</div>
+		</div>
+	<!-- </div> -->
+=======
 
 	<section class="sectionmain">
 
@@ -113,6 +214,7 @@
 		<hr>
 
 	</aside>
+>>>>>>> master
 
 	
 {% endblock%}

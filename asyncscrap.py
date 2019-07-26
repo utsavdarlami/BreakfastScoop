@@ -35,7 +35,7 @@ news_category ={0:'POLITICS',
 
 doc= ["Patriots' Cardona promoted to lieutenant in Navy Joe Cardona, who has spent his entire NFL career with the Patriots balancing his football and active-duty commitments, has been promoted to the rank of lieutenant in the U.S. Navy."]
 
-myNBmodel = pickle.load( open('myNBmodel.pkl','rb'))
+myNBmodel = pickle.load( open('myCBmodel.pkl','rb'))
 
 
 def predictNewsCategory(text_doc):
@@ -60,9 +60,9 @@ def TotalNewsScrap():
 
     myclient = pymongo.MongoClient("mongodb://localhost:27017/")
     breakfastDB = myclient["breakfast"]
-    breakfastDB["asyncScrap"].drop()
+    breakfastDB["totalNews"].drop()
 
-    newsCollection = breakfastDB["asyncScrap"]
+    newsCollection = breakfastDB["totalNews"]
     urls={
         "Wired":"https://www.wired.com/feed/rss",
         "Aljazeera":"https://www.aljazeera.com/xml/rss/all.xml",
@@ -129,7 +129,7 @@ def TotalNewsScrap():
 
     # end = timeit.timeit()
 
-    # print("-----------------------")
+    print("-------Sucess---------------")
 
     # print(end-start)
 if __name__=="__main__":

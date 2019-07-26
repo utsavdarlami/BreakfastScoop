@@ -13,7 +13,7 @@ from flask_pymongo import PyMongo
 import time
 import schedule
 from threading import Thread
-
+from gevent import monkey
 
 # our news Scrapper 
 # from nep_scrap import NewsScrapper 
@@ -50,14 +50,8 @@ def home():
     news_science          = mongo.db.totalNews.find({"Category": "SCIENCE"})
     news_arts             = mongo.db.totalNews.find({"Category": "ARTS_CULTURE"})
     #single view
-    single_sports         = mongo.db.totalNews.find_one({"Category": "SPORTS"})
-    single_tech           = mongo.db.totalNews.find_one({"Category": "TECH"})
-    single_business       = mongo.db.totalNews.find_one({"Category": "BUSINESS"})
-    single_worldnews      = mongo.db.totalNews.find_one({"Category": "WORLDNEWS"})
-    single_entertainment  = mongo.db.totalNews.find_one({"Category": "ENTERTAINMENT"})
-    single_politics       = mongo.db.totalNews.find_one({"Category": "POLITICS"})
-    single_science        = mongo.db.totalNews.find_one({"Category": "SCIENCE"})
-    single_arts           = mongo.db.totalNews.find_one({"Category": "ARTS_CULTURE"})
+    # single_sports         = mongo.db.totalNews.find_one({"Category": "SPORTS"})
+
     return render_template('changehome.html',
                             news_sports=news_sports[1:6],
                             news_tech=news_tech[1:6],
@@ -161,11 +155,6 @@ def test3():
     })
     return "data added"""
 
-@app.route("/api3/")
-def test3():
-    international_news = mongo.db.filteredNews.find({"Category_Class": "WORLDNEWS"})
-
-    return render_template('db.html',news_list =international_news)
 """-------------------------"""
 @app.route("/pre/")
 def predict():
@@ -216,15 +205,16 @@ if __name__=='__main__':
     # schedule.every(6).hours.do(job)
 
     #hours
+    monkey.patch_all()
 
-    schedule.every(6).hours.do(TotalNewsScrap)
+    # schedule.every(6).hours.do(TotalNewsScrap)
     # schedule.every(6).hours.do(AW_scrap)
     # schedule.every(6).hours.do(technology_scrap)
     # schedule.every(6).hours.do(sports_scrap)
     # schedule.every(6).hours.do(business_scrap)
 
     #minutes
-    # schedule.every(10).minutes.do(nep_scrap)
+    schedule.every(2).minutes.do(TotalNewsScrap)
     # schedule.every(10).minutes.do(AW_scrap)
     # schedule.every(10).minutes.do(technology_scrap)
     # schedule.every(10).minutes.do(sports_scrap)

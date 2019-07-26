@@ -19,7 +19,7 @@ from gevent import monkey
 # from nep_scrap import NewsScrapper 
 # from totalscrap import TotalNewsScrap
 from asyncscrap import TotalNewsScrap
-
+from nepalScrap import NepalNewsScrap
 #others
 import json
 import os
@@ -200,6 +200,8 @@ if __name__=='__main__':
     monkey.patch_all()
 
     # schedule.every(6).hours.do(TotalNewsScrap)
+    # schedule.every(6).hours.do(NepalNewsScrap)
+
     # schedule.every(6).hours.do(AW_scrap)
     # schedule.every(6).hours.do(technology_scrap)
     # schedule.every(6).hours.do(sports_scrap)
@@ -207,6 +209,8 @@ if __name__=='__main__':
 
     #minutes
     schedule.every(2).minutes.do(TotalNewsScrap)
+    schedule.every(2).minutes.do(NepalNewsScrap)
+
     # schedule.every(10).minutes.do(AW_scrap)
     # schedule.every(10).minutes.do(technology_scrap)
     # schedule.every(10).minutes.do(sports_scrap)
